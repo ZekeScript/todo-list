@@ -1,66 +1,48 @@
-# Lista de Tareas en React
+# Todo List App
 
-Esta es una aplicación web desarrollada en React que te permite administrar tu lista de tareas de manera eficiente y sencilla. Con una interfaz intuitiva y atractiva, podrás agregar, realizar un seguimiento y gestionar tus tareas diarias de forma organizada.
+Manage your daily tasks efficiently and effortlessly with this simple and intuitive Todo List web application built using React.
 
-## Funcionalidades Principales
+## Features
 
-- **Agregar tareas:** Ingresa nuevas tareas a través del campo de texto o el formulario proporcionado. Las tareas se añadirán a la lista de tareas pendientes.
+- Add tasks: Easily add new tasks through a text field or a form. The newly added tasks will be displayed in the pending tasks list.
+- Mark tasks as completed: Each task in the list can be marked as completed. Completed tasks will be visually differentiated and moved to the completed tasks section.
+- Delete tasks: Remove tasks from the list either by clicking a dedicated delete button associated with each task or by using a right-click deletion option.
+- Filter tasks: Filter tasks based on their status (pending or completed) to focus on relevant tasks according to your needs.
+- Data persistence: Enable data persistence by storing tasks in the browser's local storage, allowing users to access their tasks even after closing and reopening the application.
 
-- **Marcar tareas como completadas:** Cada tarea en la lista puede ser marcada como completada. Una vez marcada, la tarea se diferenciará visualmente y se moverá a la sección de tareas completadas.
+## Additional Features (Optional)
 
-- **Eliminar tareas:** Elimina las tareas de la lista mediante el botón de eliminación asociado a cada tarea o utilizando la opción de eliminación al hacer clic derecho.
+Feel free to implement these additional features to enhance your Todo List app:
 
-- **Filtrar tareas:** Utiliza las opciones de filtrado para mostrar solo las tareas pendientes o las tareas completadas. Esto te permitirá enfocarte en las tareas relevantes según tus necesidades.
+- Set task deadlines: Add the ability to set deadlines for tasks and display them prominently.
+- Categorize or prioritize tasks: Organize tasks into categories or add priority levels to help users manage their tasks effectively.
+- Reminders or notifications: Implement reminders or notifications for upcoming or overdue tasks.
 
-- **Persistencia de datos:** Las tareas se almacenan en el almacenamiento local del navegador, lo que te permite acceder a tus tareas incluso después de cerrar y volver a abrir la aplicación.
+## Installation
 
-## Funcionalidades Adicionales (Opcionales)
+Follow these steps to run the Todo List app locally:
 
-Si deseas ir más allá, puedes implementar características adicionales, como:
+1. Clone this repository: `git clone https://github.com/ZekeScript/todo-list.git`
+2. Navigate to the project directory: `cd todo-list`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit: `http://localhost:3000`
 
-- **Establecer fechas límite:** Agrega la opción de establecer fechas límite para las tareas, lo que te ayudará a priorizar tus actividades.
+## Contributing
 
-- **Organizar tareas por categorías o prioridades:** Proporciona la capacidad de categorizar o priorizar las tareas para una mejor organización.
+Contributions are welcome! If you have any ideas for improvements or bug fixes, please submit a pull request.
 
-- **Recordatorios y notificaciones:** Agrega recordatorios o notificaciones para alertarte sobre las tareas próximas o pendientes.
+## License
 
-## Instalación y Uso
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-1. Clona este repositorio en tu máquina local:
+## Acknowledgements
 
-```
-git clone https://github.com/TuUsuario/TuRepositorio.git
-```
+- This Todo List app was built using React, a JavaScript library for building user interfaces.
+- The project structure and initial setup were inspired by [Vite](https://vitejs.dev/), a popular React boilerplate.
 
-2. Navega al directorio del proyecto:
+## Contact
 
-```
-cd TuRepositorio
-```
+If you have any questions or feedback regarding this project, please feel free to reach out to me through my GitHub profile or via email.
 
-3. Instala las dependencias necesarias:
-
-```
-npm install
-```
-
-4. Inicia la aplicación:
-
-```
-npm start
-```
-
-5. Abre tu navegador web e ingresa la siguiente URL:
-
-```
-http://localhost:3000
-```
-
-## Contribución
-
-Si deseas contribuir a este proyecto, eres bienvenido(a) a enviar tus pull requests. Antes de hacerlo, asegúrate de discutir tus cambios propuestos a través de los issues para obtener más información y asegurarte de que estás trabajando en lo que se necesita.
-
-## Licencia
-
-Este proyecto se distribuye bajo la licencia [MIT](LICENSE).
-
+Happy task management with the Todo List app!

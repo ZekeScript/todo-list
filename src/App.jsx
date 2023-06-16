@@ -5,29 +5,38 @@ function App () {
   const [tasks, setTasks] = useState([])
   const [inputValue, setInputValue] = useState('')
 
-  const handleInput = (e = document.getElementById('task-input')) => {
-    setInputValue(e.target.value)
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value)
   }
 
-  const handleButton = () => {
-    setTasks([...tasks, inputValue])
+  const handleAddTask = () => {
+    if (inputValue.trim() !== '') {
+      setTasks([...tasks, inputValue])
+      setInputValue('')
+    }
+  }
+
+  const handleDeleteTask = (index) => {
+    const newTasks = [...tasks]
+    newTasks.splice(index, 1)
+    setTasks(newTasks)
   }
 
   return (
-    <>
-      <h1>ToDo List</h1>
-      {tasks.map((task, index) => {
-        return (
+    <main>
+      <header className='input-field'>
+        <input type='text' placeholder='New Task' value={inputValue} onChange={handleInputChange} />
+        <button onClick={handleAddTask}>+</button>
+      </header>
+      <section className='tasks'>
+        {tasks.map((task, index) => (
           <div className='task card' key={index}>
             {task}
+            <button className='task' onClick={() => handleDeleteTask(index)}>×</button>
           </div>
-        )
-      })}
-      <section className='input-field'>
-        <input id='task-input' placeholder='New Task' value={inputValue} onChange={handleInput} />
-        <button onClick={handleButton}>+</button>
+        ))}
       </section>
-    </>
+    </main>
   )
 }
 

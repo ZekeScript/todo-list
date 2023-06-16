@@ -15,6 +15,8 @@
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  align-items: baseline;
+  justify-content:space-between;
 }
 .task:hover {
   border-color: #646cff;
@@ -25,14 +27,25 @@
 }
 
 .card {
+  display: flex;
   padding: .6em;
-  margin: 1em 0em;
 }
 
 .input-field {
   display: flex;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
+  position: fixed;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 1em 1.2em;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   gap: 8px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90vw;
 }

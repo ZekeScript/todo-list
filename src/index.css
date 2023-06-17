@@ -1,11 +1,16 @@
 :root {
+  --background-color: #344FA1;
+  --background-darker-color: #041955;
+  --background-button: #EB06FF;
+  --subtitle-font-color: #89A6F2;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: #FFFFFF;
-  background-color: #344FA1;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +20,7 @@
 }
 
 h1 {
-  margin-top: 70px;
+  margin: 70px 0 40px 0;
   font-size: 45px;
 }
 
@@ -27,7 +32,12 @@ body {
 }
 
 button {
-  background-color: #EB06FF;
+  background-color: var(--background-button);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: background-color 0.3s;
+}
+
+input {
   border: none;
 }

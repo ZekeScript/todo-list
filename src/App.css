@@ -4,7 +4,7 @@
 }
 
 .subtitle{
-  color: #89A6F2;
+  color: var(--subtitle-font-color);
   line-height: 1.5;
   font-weight: 400;
   font-size: large;
@@ -13,7 +13,7 @@
 .task {
   padding: 1.3rem;
   margin: 10px 0;
-  background-color: #041955;
+  background-color: var(--background-darker-color);
   font-size: larger;
   border-radius: 30px;
   display: flex;
@@ -26,9 +26,21 @@
   align-items: center;
 }
 
+.incomplete {
+  margin: 0 15px 0 0;
+  width: 40px;
+  fill: #ffffff;
+}
+
 .complete {
   margin: 0 15px 0 0;
-  font-size: 30px;
+  width: 40px;
+  fill: #bebebe;
+}
+
+.complete-text {
+  text-decoration: line-through;
+  color: #bebebe;
 }
 
 .trash-icon {
@@ -36,7 +48,7 @@
   height: 30px;
 }
 .trash-icon:hover {
-  color: #EB06FF;
+  color: var(--background-button);
   transition: 300ms;
 }
 
@@ -49,9 +61,70 @@
   height: 80px;
   border-radius: 100%;
 }
-
 .add-task:hover {
-  background-color: #ea06ffe7;
+  background-color: var(--background-button);
   color: #ffffffd7;
   transition: 300ms;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-content {
+  width: 50%;
+  height: 25%;
+  flex-direction: column;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.exit-overlay {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+}
+
+.overlay-button {
+  position: absolute;
+  bottom: 0;
+  margin: 20px;
+  align-items: center;
+  right: 0px;
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.overlay-button:hover {
+  background-color: var(--background-button);
+  color: #ffffffd7;
+  transition: 300ms;
+}
+
+.overlay-button svg {
+  width: 25px;
+}
+
+.new-task {
+  position: absolute;
+  bottom: 80px;
+  padding: .8em;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  border-radius: 30px;
 }

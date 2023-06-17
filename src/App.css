@@ -1,51 +1,57 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+
+.subtitle{
+  color: #89A6F2;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: large;
 }
 
 .task {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  align-items: baseline;
-  justify-content:space-between;
-}
-.task:hover {
-  border-color: #646cff;
-}
-.task:focus,
-.task:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  padding: 1.3rem;
+  margin: 10px 0;
+  background-color: #041955;
+  font-size: larger;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card {
+.task > div {
   display: flex;
-  padding: .6em;
+  align-items: center;
 }
 
-.input-field {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  background-color: #1a1a1a;
-  padding: 1em 1.2em;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  gap: 8px;
+.complete {
+  margin: 0 15px 0 0;
+  font-size: 30px;
 }
 
-.tasks {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 90vw;
+.trash-icon {
+  width: 30px;
+  height: 30px;
+}
+.trash-icon:hover {
+  color: #EB06FF;
+  transition: 300ms;
+}
+
+.add-task {
+  position: absolute;
+  padding: 18px;
+  bottom: 65px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.add-task:hover {
+  background-color: #ea06ffe7;
+  color: #ffffffd7;
+  transition: 300ms;
 }

@@ -6,7 +6,10 @@ import Task from './components/Task'
 import TEMPLATE from './constants'
 
 function App () {
-  const [tasks, setTasks] = useState(TEMPLATE)
+  const [tasks, setTasks] = useState(() => {
+    const tasksFromStorage = window.localStorage.getItem('tasks')
+    return tasksFromStorage ? JSON.parse(tasksFromStorage) : TEMPLATE
+  })
   const [inputValue, setInputValue] = useState('')
   const [showOverlay, setShowOverlay] = useState(false)
 
@@ -18,6 +21,10 @@ function App () {
     setTasks([...tasks, newTask])
   }
 
+  function saveToDo () {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks))
+  }
+
   const handleAddTask = () => {
     if (inputValue.trim() !== '') {
       addTask({ text: inputValue, complete: false })
@@ -25,6 +32,8 @@ function App () {
       toggleOverlay()
     }
   }
+
+  saveToDo()
 
   const handleDeleteTask = (index) => {
     const newTasks = [...tasks]

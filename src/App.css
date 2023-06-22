@@ -29,18 +29,17 @@
 .incomplete {
   margin: 0 15px 0 0;
   width: 40px;
-  fill: #ffffff;
 }
 
 .complete {
   margin: 0 15px 0 0;
   width: 40px;
-  fill: #bebebe;
+  fill: #aaaaaa;
 }
 
 .complete-text {
   text-decoration: line-through;
-  color: #bebebe;
+  color: #aaaaaa;
 }
 
 .trash-icon {
@@ -124,9 +123,19 @@
 
 .new-task {
   position: absolute;
-  bottom: 80px;
+  bottom: 120px;
   padding: .8em;
   margin: 10px 0;
   background-color: var(--background-darker-color);
   border-radius: 30px;
+}
+
+.select-overlay {
+  position: absolute;
+  bottom: 80px;
+  padding: .5em;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  border-radius: 30px;
+  border: none;
 }

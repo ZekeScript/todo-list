@@ -11,29 +11,33 @@ function App () {
     return tasksFromStorage ? JSON.parse(tasksFromStorage) : TEMPLATE
   })
   const [inputValue, setInputValue] = useState('')
+  const [selectValue, setSelectValue] = useState('Personal')
   const [showOverlay, setShowOverlay] = useState(false)
+
+  function saveToDo () {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks))
+  }
+  saveToDo()
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value)
+  }
+
+  const handleSelectChange = (event) => {
+    setSelectValue(event.target.value)
   }
 
   function addTask (newTask) {
     setTasks([...tasks, newTask])
   }
 
-  function saveToDo () {
-    window.localStorage.setItem('tasks', JSON.stringify(tasks))
-  }
-
   const handleAddTask = () => {
     if (inputValue.trim() !== '') {
-      addTask({ text: inputValue, complete: false })
+      addTask({ text: inputValue, complete: false, categorie: selectValue })
       setInputValue('')
       toggleOverlay()
     }
   }
-
-  saveToDo()
 
   const handleDeleteTask = (index) => {
     const newTasks = [...tasks]
@@ -78,6 +82,8 @@ function App () {
             inputValue={inputValue}
             handleInputChange={handleInputChange}
             handleAddTask={handleAddTask}
+            handleSelectChange={handleSelectChange}
+            selectValue={selectValue}
           />
         )}
       </section>

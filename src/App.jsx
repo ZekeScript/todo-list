@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
+import { CategoriesSection } from './components/CategoriesSection'
 import Overlay from './components/Overlay'
 import PlusButton from './components/PlusButton'
 import Task from './components/Task'
-import TEMPLATE from './constants'
+import { CATEGORIES, TEMPLATE } from './constants'
 
 function App () {
   const [tasks, setTasks] = useState(() => {
@@ -60,6 +61,19 @@ function App () {
       <header className='input-field'>
         <h1>Let's Get Things Done!</h1>
       </header>
+      <section>
+        <h2 className='subtitle'>CATEGORIES</h2>
+        <div className='categorie'>
+          {CATEGORIES.map((categorie, index) => (
+            <CategoriesSection
+              key={index}
+              index={index}
+              tasks={tasks}
+              categorie={categorie}
+            />
+          ))}
+        </div>
+      </section>
       <section className='tasks'>
         <h2 className='subtitle'>TASKS</h2>
         {tasks.map((task, index) => (
@@ -83,7 +97,6 @@ function App () {
             handleInputChange={handleInputChange}
             handleAddTask={handleAddTask}
             handleSelectChange={handleSelectChange}
-            selectValue={selectValue}
           />
         )}
       </section>

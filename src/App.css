@@ -139,3 +139,22 @@
   border-radius: 30px;
   border: none;
 }
+
+.categorie {
+  display: flex;
+  gap: 20px;
+}
+
+.task-categorie {
+  padding: 1.3rem;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  font-size: 30px;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.task-count {
+  font-size: 17px;
+  color: #50639B;
+}

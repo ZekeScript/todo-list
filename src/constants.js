@@ -1,4 +1,4 @@
-const TEMPLATE = [
+export const TEMPLATE = [
   {
     text: 'Daily meeting with team',
     complete: false,
@@ -26,4 +26,4 @@ const TEMPLATE = [
   }
 ]
 
-export default TEMPLATE
+export const CATEGORIES = ['Personal', 'Business']

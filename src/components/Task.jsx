@@ -10,7 +10,7 @@ const Task = ({ index, task, handleCompleteTask, handleDeleteTask }) => (
         )
       : (
         <div onClick={() => handleCompleteTask(index)}>
-          <IncompleteTasks text={task.text} />
+          <IncompleteTasks text={task.text} categorie={task.categorie} />
         </div>
         )}
     <div className='trash-icon' onClick={() => handleDeleteTask(index)}>

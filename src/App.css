@@ -29,18 +29,17 @@
 .incomplete {
   margin: 0 15px 0 0;
   width: 40px;
-  fill: #ffffff;
 }
 
 .complete {
   margin: 0 15px 0 0;
   width: 40px;
-  fill: #bebebe;
+  fill: #aaaaaa;
 }
 
 .complete-text {
   text-decoration: line-through;
-  color: #bebebe;
+  color: #aaaaaa;
 }
 
 .trash-icon {
@@ -62,8 +61,8 @@
   border-radius: 100%;
 }
 .add-task:hover {
-  background-color: var(--background-button);
-  color: #ffffffd7;
+  background-color: #d006e2;
+  color: #d4d4d4d7;
   transition: 300ms;
 }
 
@@ -113,8 +112,8 @@
   padding: 5px 15px;
 }
 .overlay-button:hover {
-  background-color: var(--background-button);
-  color: #ffffffd7;
+  background-color: #d006e2;
+  color: #d4d4d4d7;
   transition: 300ms;
 }
 
@@ -124,9 +123,46 @@
 
 .new-task {
   position: absolute;
-  bottom: 80px;
+  bottom: 120px;
   padding: .8em;
   margin: 10px 0;
   background-color: var(--background-darker-color);
   border-radius: 30px;
+}
+
+.select-overlay {
+  position: absolute;
+  bottom: 80px;
+  padding: .5em;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  border-radius: 30px;
+  border: none;
+}
+
+.categorie {
+  display: flex;
+  gap: 20px;
+}
+
+.task-categorie {
+  padding: 1.3rem;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  font-size: 30px;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.task-categorie-count {
+  font-size: 17px;
+  color: #50639B;
+}
+
+.task-categorie-bar {
+  width: 200px;
+  height: 2px;
+  margin-top: 15px;
+  background-color: #384770;
+  border-radius: 25%;
 }

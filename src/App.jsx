@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
+import { CategoriesSection } from './components/CategoriesSection'
 import Overlay from './components/Overlay'
 import PlusButton from './components/PlusButton'
 import Task from './components/Task'
-import TEMPLATE from './constants'
+import { CATEGORIES, TEMPLATE } from './constants'
 
 function App () {
   const [tasks, setTasks] = useState(() => {
@@ -11,29 +12,33 @@ function App () {
     return tasksFromStorage ? JSON.parse(tasksFromStorage) : TEMPLATE
   })
   const [inputValue, setInputValue] = useState('')
+  const [selectValue, setSelectValue] = useState('Personal')
   const [showOverlay, setShowOverlay] = useState(false)
+
+  function saveToDo () {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks))
+  }
+  saveToDo()
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value)
+  }
+
+  const handleSelectChange = (event) => {
+    setSelectValue(event.target.value)
   }
 
   function addTask (newTask) {
     setTasks([...tasks, newTask])
   }
 
-  function saveToDo () {
-    window.localStorage.setItem('tasks', JSON.stringify(tasks))
-  }
-
   const handleAddTask = () => {
     if (inputValue.trim() !== '') {
-      addTask({ text: inputValue, complete: false })
+      addTask({ text: inputValue, complete: false, categorie: selectValue })
       setInputValue('')
       toggleOverlay()
     }
   }
-
-  saveToDo()
 
   const handleDeleteTask = (index) => {
     const newTasks = [...tasks]
@@ -56,6 +61,19 @@ function App () {
       <header className='input-field'>
         <h1>Let's Get Things Done!</h1>
       </header>
+      <section>
+        <h2 className='subtitle'>CATEGORIES</h2>
+        <div className='categorie'>
+          {CATEGORIES.map((categorie, index) => (
+            <CategoriesSection
+              key={index}
+              index={index}
+              tasks={tasks}
+              categorie={categorie}
+            />
+          ))}
+        </div>
+      </section>
       <section className='tasks'>
         <h2 className='subtitle'>TASKS</h2>
         {tasks.map((task, index) => (
@@ -78,6 +96,7 @@ function App () {
             inputValue={inputValue}
             handleInputChange={handleInputChange}
             handleAddTask={handleAddTask}
+            handleSelectChange={handleSelectChange}
           />
         )}
       </section>

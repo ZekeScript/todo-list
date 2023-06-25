@@ -61,8 +61,8 @@
   border-radius: 100%;
 }
 .add-task:hover {
-  background-color: var(--background-button);
-  color: #ffffffd7;
+  background-color: #d006e2;
+  color: #d4d4d4d7;
   transition: 300ms;
 }
 
@@ -112,8 +112,8 @@
   padding: 5px 15px;
 }
 .overlay-button:hover {
-  background-color: var(--background-button);
-  color: #ffffffd7;
+  background-color: #d006e2;
+  color: #d4d4d4d7;
   transition: 300ms;
 }
 
@@ -154,7 +154,15 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.task-count {
+.task-categorie-count {
   font-size: 17px;
   color: #50639B;
+}
+
+.task-categorie-bar {
+  width: 200px;
+  height: 2px;
+  margin-top: 15px;
+  background-color: #384770;
+  border-radius: 25%;
 }

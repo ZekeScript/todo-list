@@ -11,7 +11,7 @@ const Overlay = ({ toggleOverlay, inputValue, handleInputChange, handleAddTask, 
       <input className='new-task' type='text' placeholder='New Task' value={inputValue} onChange={handleInputChange} />
       <select className='select-overlay' aria-label='Personal' onChange={handleSelectChange}>
         {CATEGORIES.map((categorie, index) => (
-          <option key={index}>{categorie}</option>
+          <option className='select-overlay-option' key={index}>{categorie}</option>
         ))}
       </select>
       <button className='overlay-button' onClick={handleAddTask}>New task

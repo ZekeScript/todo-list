@@ -166,3 +166,18 @@
   background-color: #384770;
   border-radius: 25%;
 }
+
+.subtitle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle-section-select {
+  padding: .7rem;
+  margin: 10px 0;
+  background-color: var(--background-darker-color);
+  font-size: medium;
+  border-radius: 30px;
+  border: none;
+}

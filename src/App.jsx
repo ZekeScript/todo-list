@@ -4,7 +4,7 @@ import { CategoriesSection } from './components/CategoriesSection'
 import Overlay from './components/Overlay'
 import PlusButton from './components/PlusButton'
 import Task from './components/Task'
-import { CATEGORIES, TEMPLATE } from './constants'
+import { CATEGORIES, FILTER_OPTIONS, TEMPLATE } from './constants'
 
 function App () {
   const [tasks, setTasks] = useState(() => {
@@ -14,6 +14,7 @@ function App () {
   const [inputValue, setInputValue] = useState('')
   const [selectValue, setSelectValue] = useState('Personal')
   const [showOverlay, setShowOverlay] = useState(false)
+  const [filterValue, setFilterValue] = useState('Both')
 
   function saveToDo () {
     window.localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -22,6 +23,10 @@ function App () {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value)
+  }
+
+  const handleSelectFilter = (event) => {
+    setFilterValue(event.target.value)
   }
 
   const handleSelectChange = (event) => {
@@ -74,17 +79,39 @@ function App () {
           ))}
         </div>
       </section>
+      {/** Todo:
+       * - Separate the logic behind the filter into a component 👇 */}
       <section className='tasks'>
-        <h2 className='subtitle'>TASKS</h2>
-        {tasks.map((task, index) => (
-          <Task
-            key={index}
-            task={task}
-            index={index}
-            handleCompleteTask={handleCompleteTask}
-            handleDeleteTask={handleDeleteTask}
-          />
-        ))}
+        <div className='subtitle-section'>
+          <h2 className='subtitle'>TASKS</h2>
+          <select className='subtitle-section-select' aria-label='Select an option' onChange={handleSelectFilter}>
+            {FILTER_OPTIONS.map((option, index) => (
+              <option className='select-overlay-option' key={index}>{option}</option>
+            ))}
+          </select>
+        </div>
+        {filterValue === 'Both'
+          ? (
+              tasks.map((task, index) => (
+                <Task
+                  key={index}
+                  task={task}
+                  index={index}
+                  handleCompleteTask={handleCompleteTask}
+                  handleDeleteTask={handleDeleteTask}
+                />
+              )))
+          : (
+              tasks.map((task, index) => (
+                task.categorie === filterValue &&
+                  <Task
+                    key={index}
+                    task={task}
+                    index={index}
+                    handleCompleteTask={handleCompleteTask}
+                    handleDeleteTask={handleDeleteTask}
+                  />
+              )))}
       </section>
       <section>
         <PlusButton toggleOverlay={toggleOverlay} />

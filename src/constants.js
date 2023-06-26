@@ -27,3 +27,5 @@ export const TEMPLATE = [
 ]
 
 export const CATEGORIES = ['Personal', 'Business']
+
+export const FILTER_OPTIONS = ['Both', 'Personal', 'Business']

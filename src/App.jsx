@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { CategoriesSection } from './components/CategoriesSection'
+import { CategorySection } from './components/CategorieSection'
 import Overlay from './components/Overlay'
 import PlusButton from './components/PlusButton'
-import Task from './components/Task'
-import { CATEGORIES, TEMPLATE } from './constants'
+import TaskSection from './components/TaskSection'
+import { TEMPLATE } from './constants'
 
 function App () {
   const [tasks, setTasks] = useState(() => {
@@ -14,6 +14,7 @@ function App () {
   const [inputValue, setInputValue] = useState('')
   const [selectValue, setSelectValue] = useState('Personal')
   const [showOverlay, setShowOverlay] = useState(false)
+  const [filterValue, setFilterValue] = useState('Both')
 
   function saveToDo () {
     window.localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -22,6 +23,10 @@ function App () {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value)
+  }
+
+  const handleSelectFilter = (event) => {
+    setFilterValue(event.target.value)
   }
 
   const handleSelectChange = (event) => {
@@ -61,45 +66,24 @@ function App () {
       <header className='input-field'>
         <h1>Let's Get Things Done!</h1>
       </header>
-      <section>
-        <h2 className='subtitle'>CATEGORIES</h2>
-        <div className='categorie'>
-          {CATEGORIES.map((categorie, index) => (
-            <CategoriesSection
-              key={index}
-              index={index}
-              tasks={tasks}
-              categorie={categorie}
-            />
-          ))}
-        </div>
-      </section>
-      <section className='tasks'>
-        <h2 className='subtitle'>TASKS</h2>
-        {tasks.map((task, index) => (
-          <Task
-            key={index}
-            task={task}
-            index={index}
-            handleCompleteTask={handleCompleteTask}
-            handleDeleteTask={handleDeleteTask}
-          />
-        ))}
-      </section>
-      <section>
-        <PlusButton toggleOverlay={toggleOverlay} />
-      </section>
-      <section>
-        {showOverlay && (
-          <Overlay
-            toggleOverlay={toggleOverlay}
-            inputValue={inputValue}
-            handleInputChange={handleInputChange}
-            handleAddTask={handleAddTask}
-            handleSelectChange={handleSelectChange}
-          />
-        )}
-      </section>
+      <CategorySection tasks={tasks} />
+      <TaskSection
+        handleSelectFilter={handleSelectFilter}
+        filterValue={filterValue}
+        tasks={tasks}
+        handleCompleteTask={handleCompleteTask}
+        handleDeleteTask={handleDeleteTask}
+      />
+      <PlusButton toggleOverlay={toggleOverlay} />
+      {showOverlay && (
+        <Overlay
+          toggleOverlay={toggleOverlay}
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          handleAddTask={handleAddTask}
+          handleSelectChange={handleSelectChange}
+        />
+      )}
     </main>
   )
 }

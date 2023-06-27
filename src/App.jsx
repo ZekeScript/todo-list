@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { CategoriesSection } from './components/CategoriesSection'
+import { CategorySection } from './components/CategorieSection'
 import Overlay from './components/Overlay'
 import PlusButton from './components/PlusButton'
-import Task from './components/Task'
-import { CATEGORIES, FILTER_OPTIONS, TEMPLATE } from './constants'
+import TaskSection from './components/TaskSection'
+import { TEMPLATE } from './constants'
 
 function App () {
   const [tasks, setTasks] = useState(() => {
@@ -66,67 +66,24 @@ function App () {
       <header className='input-field'>
         <h1>Let's Get Things Done!</h1>
       </header>
-      <section>
-        <h2 className='subtitle'>CATEGORIES</h2>
-        <div className='categorie'>
-          {CATEGORIES.map((categorie, index) => (
-            <CategoriesSection
-              key={index}
-              index={index}
-              tasks={tasks}
-              categorie={categorie}
-            />
-          ))}
-        </div>
-      </section>
-      {/** Todo:
-       * - Separate the logic behind the filter into a component 👇 */}
-      <section className='tasks'>
-        <div className='subtitle-section'>
-          <h2 className='subtitle'>TASKS</h2>
-          <select className='subtitle-section-select' aria-label='Select an option' onChange={handleSelectFilter}>
-            {FILTER_OPTIONS.map((option, index) => (
-              <option className='select-overlay-option' key={index}>{option}</option>
-            ))}
-          </select>
-        </div>
-        {filterValue === 'Both'
-          ? (
-              tasks.map((task, index) => (
-                <Task
-                  key={index}
-                  task={task}
-                  index={index}
-                  handleCompleteTask={handleCompleteTask}
-                  handleDeleteTask={handleDeleteTask}
-                />
-              )))
-          : (
-              tasks.map((task, index) => (
-                task.categorie === filterValue &&
-                  <Task
-                    key={index}
-                    task={task}
-                    index={index}
-                    handleCompleteTask={handleCompleteTask}
-                    handleDeleteTask={handleDeleteTask}
-                  />
-              )))}
-      </section>
-      <section>
-        <PlusButton toggleOverlay={toggleOverlay} />
-      </section>
-      <section>
-        {showOverlay && (
-          <Overlay
-            toggleOverlay={toggleOverlay}
-            inputValue={inputValue}
-            handleInputChange={handleInputChange}
-            handleAddTask={handleAddTask}
-            handleSelectChange={handleSelectChange}
-          />
-        )}
-      </section>
+      <CategorySection tasks={tasks} />
+      <TaskSection
+        handleSelectFilter={handleSelectFilter}
+        filterValue={filterValue}
+        tasks={tasks}
+        handleCompleteTask={handleCompleteTask}
+        handleDeleteTask={handleDeleteTask}
+      />
+      <PlusButton toggleOverlay={toggleOverlay} />
+      {showOverlay && (
+        <Overlay
+          toggleOverlay={toggleOverlay}
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          handleAddTask={handleAddTask}
+          handleSelectChange={handleSelectChange}
+        />
+      )}
     </main>
   )
 }

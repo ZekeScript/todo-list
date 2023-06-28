@@ -42,3 +42,9 @@ button {
 input {
   border: none;
 }
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 35px;
+  }
+}

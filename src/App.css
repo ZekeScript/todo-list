@@ -15,7 +15,7 @@
   margin: 10px 0;
   background-color: var(--background-darker-color);
   font-size: larger;
-  border-radius: 30px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +29,11 @@
 .incomplete {
   margin: 0 15px 0 0;
   width: 40px;
+  height: 40px;
+}
+
+.incomplete-text {
+  width: 200px;
 }
 
 .complete {
@@ -40,6 +45,7 @@
 .complete-text {
   text-decoration: line-through;
   color: #aaaaaa;
+  width: 200px;
 }
 
 .trash-icon {
@@ -47,7 +53,8 @@
   height: 30px;
   transition: 300ms;
 }
-.trash-icon:hover {
+.trash-icon:hover,
+.trash-icon:active {
   color: var(--background-button);
 }
 
@@ -108,7 +115,7 @@
   display: flex;
   gap: 5px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 5px 15px;
 }
 .overlay-button:hover {
@@ -127,7 +134,7 @@
   padding: .8em;
   margin: 10px 0;
   background-color: var(--background-darker-color);
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .select-overlay {
@@ -136,7 +143,7 @@
   padding: .5em;
   margin: 10px 0;
   background-color: var(--background-darker-color);
-  border-radius: 30px;
+  border-radius: 20px;
   border: none;
 }
 
@@ -150,7 +157,7 @@
   margin: 10px 0;
   background-color: var(--background-darker-color);
   font-size: 30px;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -178,6 +185,55 @@
   margin: 10px 0;
   background-color: var(--background-darker-color);
   font-size: medium;
-  border-radius: 30px;
+  border-radius: 20px;
   border: none;
+}
+
+@media (max-width: 375px) {
+  #root {
+    max-width: 90vw;
+  }
+
+  .subtitle{
+    font-size: smaller;
+  }
+
+  .task {
+    font-size: medium;
+  }
+
+  .add-task {
+    position: fixed;
+    padding: 16px;
+    bottom: 5vh;
+    right: 10vw;
+    width: 65px;
+    height: 65px;
+  }
+
+  .new-task {
+    width: 70%;
+  }
+
+  .categorie {
+    gap: 15px;
+  }
+
+  .task-categorie {
+    font-size: 21px;
+    padding: 1rem;
+  }
+
+  .task-categorie-count {
+    font-size: 13px;
+  }
+
+  .task-categorie-bar {
+    width: 130px;
+  }
+
+  .subtitle-section-select {
+    padding: .6rem;
+    margin: 10px 0;
+  }
 }

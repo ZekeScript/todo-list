@@ -22,11 +22,11 @@
 
 h1 {
   margin: 70px 0 40px 0;
-  font-size: 45px;
+  font-size: 55px;
 }
 
 body {
-  margin: 0;
+  margin: 0 5vw;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
@@ -41,10 +41,4 @@ button {
 
 input {
   border: none;
-}
-
-@media (max-width: 375px) {
-  h1 {
-    font-size: 35px;
-  }
 }

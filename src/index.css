@@ -22,14 +22,14 @@
 
 h1 {
   margin: 70px 0 40px 0;
-  font-size: 55px;
+  font-size: 30px;
 }
 
 body {
   margin: 0 5vw;
   display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  max-width: 90vw;
+  max-height: 100vh;
 }
 
 button {

@@ -1,36 +1,36 @@
 #root {
-  max-width: 1280px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
 .subtitle {
   color: var(--subtitle-font-color);
   line-height: 1.5;
-  font-weight: 600;
-  letter-spacing: 3.5px;
-  font-size: large;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: x-small;
 }
 
 .categorie {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .task-categorie {
   width: 100%;
-  padding: 1.3rem;
-  margin: 10px 0 40px 0;
+  padding: 1rem;
+  margin: 10px 0 15px 0;
   background-color: var(--background-darker-color);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: .5px;
+  letter-spacing: .2px;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .task-categorie-count {
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   margin: 5px 0;
   color: #50639B;
 }
@@ -38,7 +38,7 @@
 .task-categorie-bar {
   width: 100%;
   height: 2px;
-  margin-top: 25px;
+  margin-top: 10px;
   background-color: #384770;
   border-radius: 25%;
 }
@@ -50,20 +50,20 @@
 }
 
 .subtitle-section-select {
-  padding: .7rem;
+  padding: .5rem;
   margin: 20px 0;
   background-color: var(--background-darker-color);
-  font-size: large;
+  font-size: smaller;
   letter-spacing: 1px;
   border-radius: 20px;
   border: none;
 }
 
 .task {
-  padding: 1.3rem;
+  padding: 1rem;
   margin: 10px 0;
   background-color: var(--background-darker-color);
-  font-size: larger;
+  font-size: medium;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -77,28 +77,28 @@
 
 .incomplete {
   margin: 0 15px 0 0;
-  width: 40px;
+  width: 30px;
 }
 
 .incomplete-text {
-  width: 500px;
+  width: 210px;
 }
 
 .complete {
   margin: 0 15px 0 0;
-  width: 40px;
+  width: 30px;
   fill: #aaaaaa;
 }
 
 .complete-text {
   text-decoration: line-through;
   color: #aaaaaa;
-  width: 500px;
+  width: 210px;
 }
 
 .trash-icon {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   transition: 300ms;
 }
 
@@ -108,12 +108,12 @@
 }
 
 .add-task {
-  position: absolute;
-  padding: 18px;
-  bottom: 65px;
-  right: 50px;
-  width: 80px;
-  height: 80px;
+  position: fixed;
+  padding: 12px;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
 }
 
@@ -147,7 +147,7 @@
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  gap: 20px;
+  gap: 10px;
 }
 
 .exit-overlay {
@@ -160,25 +160,25 @@
 }
 
 .new-task {
-  font-size: large;
-  padding: .8em;
+  font-size: small;
+  padding: .6em;
   background-color: var(--background-darker-color);
   border-radius: 20px;
 }
 
 .select-overlay {
-  font-size: large;
-  padding: .6em;
+  font-size: small;
+  padding: .5em;
   background-color: var(--background-darker-color);
   border-radius: 20px;
   border: none;
 }
 
 .overlay-button {
-  font-size: larger;
+  font-size: small;
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   padding: 5px 15px;
   align-items: center;
   width: fit-content;
@@ -195,5 +195,5 @@
 }
 
 .overlay-button svg {
-  width: 25px;
+  width: 20px;
 }

@@ -42,3 +42,9 @@ button {
 input {
   border: none;
 }
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: 45px;
+  }
+}

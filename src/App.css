@@ -21,7 +21,7 @@
   padding: 1rem;
   margin: 10px 0 15px 0;
   background-color: var(--background-darker-color);
-  font-size: 20px;
+  font-size: x-large;
   font-weight: 500;
   letter-spacing: .2px;
   border-radius: 20px;
@@ -29,7 +29,7 @@
 }
 
 .task-categorie-count {
-  font-size: 12px;
+  font-size: small;
   font-weight: 500;
   margin: 5px 0;
   color: #50639B;
@@ -196,4 +196,43 @@
 
 .overlay-button svg {
   width: 20px;
+}
+
+@media (min-width: 500px) {
+  .subtitle {
+    font-size: small;
+  }
+
+  .task {
+    padding: 1.4rem;
+  }
+
+  .incomplete-text {
+    width: 390px;
+  }
+
+  .complete-text {
+    width: 390px;
+  }
+
+  .add-task {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .task-categorie-bar {
+    margin-top: 20px;
+  }
+
+  .add-task {
+    bottom: 5vh;
+    right: 30vw;
+  }
+
+  .overlay-content {
+    min-width: 20%;
+    min-height: 25%;
+  }
 }

@@ -71,7 +71,7 @@
 }
 
 .task:last-child {
-  margin-bottom: 50px;
+  margin-bottom: 15vh;
 }
 
 .task>div {
@@ -202,7 +202,7 @@
 }
 
 footer {
-  position: absolute;
+  position:fixed;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -210,6 +210,7 @@ footer {
   padding: 10px;
   font-size: 12px;
   color: var(--subtitle-font-color);
+  z-index: -90;
 }
 
 .signature {

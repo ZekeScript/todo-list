@@ -84,6 +84,13 @@ function App () {
           handleSelectChange={handleSelectChange}
         />
       )}
+      <footer>
+        <div className='signature'>
+          <p>Developed by <span className='signature__author'>ZekeScript</span></p>
+          <p>&copy; 2023. All rights reserved.</p>
+        </div>
+      </footer>
+
     </main>
   )
 }

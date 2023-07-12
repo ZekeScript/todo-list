@@ -18,6 +18,19 @@ Feel free to implement these additional features to enhance your Todo List app:
 - **Categorize or prioritize tasks:** :label: Organize tasks into categories or add priority levels to help users manage their tasks effectively.
 - **Reminders or notifications:** Implement reminders or notifications for upcoming or overdue tasks. :bell:
 
+## Screenshots
+
+- **Desktop**
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/afac9eb0-43b9-4377-af08-d1148c6110bd)
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/97aa574f-b499-426b-852c-abfe6c2f9d42)
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/965c5ef5-d0a7-4a34-aea1-493d9228c1f7)
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/eea3c92d-c1e7-4b99-96af-fde618017dda)
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/7b96436c-bd21-4266-8801-54beb9e5ba36)
+![image](https://github.com/ZekeScript/todo-list/assets/57415369/3832aa5d-6e42-467b-a328-a6db15ff7e2b)
+
+- **Mobile**
+
+
 ## Installation
 
 Follow these steps to run the Todo List app locally:
